@@ -23,9 +23,6 @@ $WILDFLY_CONF_DIR/install-mysql-ds.sh
 # Install the Hibernate Spatial module
 $WILDFLY_CONF_DIR/install-hibernate-spatial.sh
 
-# Install the Keycloak overlay
-# $WILDFLY_CONF_DIR/install-keycloak-overlay.sh
-
 # Install the Keycloak adapter
 $WILDFLY_CONF_DIR/install-keycloak-adapter.sh
 

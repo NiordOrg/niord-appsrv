@@ -27,6 +27,8 @@ Two databases are needed, one for Keycloak and one for the Niord web application
 
 ## Wildfly Installation and Configuration
 
+Installs a Wildfly server and configures a MySQL data source, a Hibernate Spatial module and a Keycloak adapter.
+
     ./02-wildfly/install-wildfly.sh
 
 
