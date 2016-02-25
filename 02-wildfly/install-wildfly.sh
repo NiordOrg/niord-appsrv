@@ -20,6 +20,9 @@ chmod +x $WILDFLY_PATH/bin/*.sh
 # Install the MySQL driver
 $WILDFLY_CONF_DIR/install-mysql-ds.sh
 
+# Configure JDBC-backed Batch support
+$WILDFLY_CONF_DIR/configure-wildfly-batch.sh
+
 # Install the Hibernate Spatial module
 $WILDFLY_CONF_DIR/install-hibernate-spatial.sh
 
