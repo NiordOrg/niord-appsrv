@@ -20,7 +20,7 @@ $WILDFLY_PATH/bin/jboss-cli.sh <<EOF
 # Start offline server
 embed-server --server-config=standalone.xml
 
-## Add Keycloak Datasource
+# Add Keycloak Datasource
 data-source add \
   --name=KeycloakDS \
   --driver-name=mysql \
@@ -34,12 +34,16 @@ data-source add \
   --blocking-timeout-wait-millis=5000 \
   --enabled=true
 
+# Add the remaining configuration from bin/keycloak-install.cli
 /subsystem=infinispan/cache-container=keycloak:add(jndi-name="infinispan/Keycloak")
 /subsystem=infinispan/cache-container=keycloak/local-cache=realms:add()
 /subsystem=infinispan/cache-container=keycloak/local-cache=users:add()
 /subsystem=infinispan/cache-container=keycloak/local-cache=sessions:add()
 /subsystem=infinispan/cache-container=keycloak/local-cache=offlineSessions:add()
 /subsystem=infinispan/cache-container=keycloak/local-cache=loginFailures:add()
+/subsystem=infinispan/cache-container=keycloak/local-cache=work:add()
+/subsystem=infinispan/cache-container=keycloak/local-cache=realmVersions:add()
+/subsystem=infinispan/cache-container=keycloak/local-cache=realmVersions/transaction=TRANSACTION:add(mode=BATCH,locking=PESSIMISTIC)
 /extension=org.keycloak.keycloak-server-subsystem/:add(module=org.keycloak.keycloak-server-subsystem)
 /subsystem=keycloak-server:add(web-context=auth)
 
