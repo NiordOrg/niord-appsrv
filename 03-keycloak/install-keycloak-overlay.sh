@@ -25,9 +25,9 @@ data-source add \
   --name=KeycloakDS \
   --driver-name=mysql \
   --jndi-name=java:jboss/datasources/KeycloakDS \
-  --connection-url="jdbc:mysql://localhost:3306/niordkc?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" \
-  --user-name=niordkc \
-  --password=niordkc \
+  --connection-url="jdbc:mysql://\${env.KCDB_PORT_3306_TCP_ADDR:localhost}:\${env.KCDB_PORT_3306_TCP_PORT:3306}/\${env.KCDB_DATABASE:niordkc}?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" \
+  --user-name=\${env.KCDB_USERNAME:niordkc} \
+  --password=\${env.KCDB_PASSWORD:niordkc} \
   --use-ccm=false \
   --min-pool-size=10 \
   --max-pool-size=100 \
