@@ -13,10 +13,7 @@ curl -o $KEYCLOAK_ADAPTER.zip http://downloads.jboss.org/keycloak/$KEYCLOAK_VERS
 unzip -o $KEYCLOAK_ADAPTER.zip
 rm $KEYCLOAK_ADAPTER.zip
 
-# Fix the adapter-install.cli script so that it runs the embedded server
-echo "embed-server --server-config=standalone.xml"|cat - bin/adapter-install.cli > /tmp/keycloak && mv /tmp/keycloak bin/adapter-install.cli
-
 # Apply the Wildfly updates
-bin/jboss-cli.sh --file=bin/adapter-install.cli
+bin/jboss-cli.sh --file=bin/adapter-install-offline.cli
 
 popd > /dev/null
