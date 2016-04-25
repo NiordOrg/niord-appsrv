@@ -36,7 +36,10 @@ data-source add \
   --min-pool-size=10 \
   --max-pool-size=200 \
   --prepared-statements-cache-size=100 \
-  --share-prepared-statements=true
+  --share-prepared-statements=true \
+  --check-valid-connection-sql="SELECT 1" \
+  --background-validation=true \
+  --background-validation-millis=60000
 
 # Reload and stop offline server
 reload --admin-only=false

@@ -32,7 +32,10 @@ data-source add \
   --min-pool-size=10 \
   --max-pool-size=100 \
   --blocking-timeout-wait-millis=5000 \
-  --enabled=true
+  --enabled=true \
+  --check-valid-connection-sql="SELECT 1" \
+  --background-validation=true \
+  --background-validation-millis=60000
 
 # Add the remaining configuration from bin/keycloak-install.cli
 /subsystem=infinispan/cache-container=keycloak:add(jndi-name="infinispan/Keycloak")
