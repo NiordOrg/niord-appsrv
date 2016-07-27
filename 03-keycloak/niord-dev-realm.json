@@ -1182,6 +1182,7 @@
     "contentSecurityPolicy" : "frame-src 'self'"
   },
   "smtpServer" : { },
+  "loginTheme" : "niord",
   "eventsEnabled" : false,
   "eventsListeners" : [ "jboss-logging" ],
   "enabledEventTypes" : [ ],

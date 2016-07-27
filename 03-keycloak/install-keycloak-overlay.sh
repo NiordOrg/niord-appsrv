@@ -14,8 +14,12 @@ curl -o $KEYCLOAK_OVERLAY.zip http://downloads.jboss.org/keycloak/$KEYCLOAK_VERS
 unzip -o $KEYCLOAK_OVERLAY.zip
 rm $KEYCLOAK_OVERLAY.zip
 
+echo "Installing Niord login theme"
+cp -r $KEYCLOAK_CONF_DIR/theme/niord themes/
+
 # We want to configure Keycloak to use MySQL, not the default H2 you would get if you execute:
 #bin/jboss-cli.sh --file=bin/keycloak-install.cli
+echo "Configuring Keycloak overlay."
 $WILDFLY_PATH/bin/jboss-cli.sh <<EOF
 # Start offline server
 embed-server --server-config=standalone.xml
