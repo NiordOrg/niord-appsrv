@@ -17,8 +17,11 @@ rm -rf  $DIR/target
 
 chmod +x $WILDFLY_PATH/bin/*.sh
 
-# Enable SSL proxying via e.g. Nginx or Apache
-$WILDFLY_CONF_DIR/enable-ssl.sh
+# Configure SSL proxying via e.g. Nginx or Apache
+$WILDFLY_CONF_DIR/configure-ssl.sh
+
+# Configure an SMTP session
+$WILDFLY_CONF_DIR/configure-smtp.sh
 
 # Install the MySQL driver
 $WILDFLY_CONF_DIR/install-mysql-ds.sh
