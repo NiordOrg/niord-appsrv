@@ -46,4 +46,22 @@ You may want to start out with a pre-configured Keycloak realm for development p
     ./03-keycloak/import-realm.sh
 
 
+### Running behind a reverse SSL proxy
 
+If you run Niord behind an Apache Web Server, say via docker on port 8081, add a VirtualHost along the lines of:
+
+    <VirtualHost *:443>
+        ServerName niord.e-navigation.net
+        SSLEngine On
+        SSLCertificateFile /path/to/ssl-cert.crt
+        SSLCertificateKeyFile /path/to/ssl-cert.key
+        SSLCACertificateFile /path/to/ssl-cert.crt
+        ProxyPass           /robots.txt !
+        ProxyPass           /  http://localhost:8081/
+        ProxyPassReverse    /  http://localhost:8081/
+        ProxyRequests Off
+        ProxyPreserveHost On
+        RequestHeader set originalScheme "https"
+        RequestHeader set X-Forwarded-Proto "https"
+        RequestHeader set X-Forwarded-Port "443"
+    </VirtualHost>
