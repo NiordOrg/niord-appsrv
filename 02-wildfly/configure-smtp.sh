@@ -10,7 +10,7 @@ $WILDFLY_PATH/bin/jboss-cli.sh <<EOF
 # Start offline server
 embed-server --std-out=echo
 batch
-/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=NiordSMTP:add(host=\${env.NIORDSMTP_PORT_23_TCP_ADDR:localhost}, port=\${env.NIORDSMTP_PORT_23_TCP_ADDR:1025})
+/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=NiordSMTP:add(host=\${env.NIORDSMTP_PORT_25_TCP_ADDR:localhost}, port=\${env.NIORDSMTP_PORT_25_TCP_PORT:1025})
 /subsystem=mail/mail-session=NiordMail:add(jndi-name="java:jboss/mail/Niord", debug=false)
 /subsystem=mail/mail-session=NiordMail/server=smtp:add(outbound-socket-binding-ref=NiordSMTP)
 run-batch
