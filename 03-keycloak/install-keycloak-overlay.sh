@@ -6,11 +6,18 @@ source $DIR/keycloak-env.sh
 source $DIR/../02-wildfly/wildfly-env.sh
 
 KEYCLOAK_OVERLAY=keycloak-overlay-$KEYCLOAK_VERSION
+TEMP_KEYCLOAK_OVERLAY_PATH=/tmp/$KEYCLOAK_OVERLAY.zip
 
 
 echo "Installing Keycloak overlay in Wildfly installation."
 pushd $WILDFLY_PATH > /dev/null
-curl -o $KEYCLOAK_OVERLAY.zip http://downloads.jboss.org/keycloak/$KEYCLOAK_VERSION/$KEYCLOAK_OVERLAY.zip
+
+# Since downloads.jboss.org can be APPALLINGLY slow, keep a copy in /tmp
+if [ ! -f "$TEMP_KEYCLOAK_OVERLAY_PATH" ]
+then
+    curl -o $TEMP_KEYCLOAK_OVERLAY_PATH http://downloads.jboss.org/keycloak/$KEYCLOAK_VERSION/$KEYCLOAK_OVERLAY.zip
+fi
+cp $TEMP_KEYCLOAK_OVERLAY_PATH $KEYCLOAK_OVERLAY.zip
 unzip -o $KEYCLOAK_OVERLAY.zip
 rm $KEYCLOAK_OVERLAY.zip
 
