@@ -29,7 +29,7 @@ data-source add \
   --name=niordDS \
   --jndi-name=java:jboss/datasources/niordDS \
   --driver-name=mysql \
-  --connection-url="jdbc:mysql://\${env.NIORDDB_PORT_3306_TCP_ADDR:localhost}:\${env.NIORDDB_PORT_3306_TCP_PORT:3306}/\${env.NIORDDB_DATABASE:niord}?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Europe%2FParis" \
+  --connection-url="jdbc:mysql://\${env.NIORDDB_PORT_3306_TCP_ADDR:localhost}:\${env.NIORDDB_PORT_3306_TCP_PORT:3306}/\${env.NIORDDB_DATABASE:niord}?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" \
   --user-name=\${env.NIORDDB_USERNAME:niord} \
   --password=\${env.NIORDDB_PASSWORD:niord} \
   --transaction-isolation=TRANSACTION_READ_COMMITTED \
