@@ -9,9 +9,13 @@ $WILDFLY_PATH/bin/jboss-cli.sh <<EOF
 # Start offline server
 embed-server --std-out=echo
 batch
+
 /subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=proxy-address-forwarding,value=true)
 /subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=redirect-socket,value=proxy-https)
 /socket-binding-group=standard-sockets/socket-binding=proxy-https:add(port=443)
+
+/subsystem=transactions:write-attribute(name=node-identifier,value=Niord)
+
 run-batch
 stop-embedded-server
 EOF
