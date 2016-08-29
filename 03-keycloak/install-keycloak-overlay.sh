@@ -39,7 +39,7 @@ data-source add \
   --connection-url="jdbc:mysql://\${env.KCDB_PORT_3306_TCP_ADDR:localhost}:\${env.KCDB_PORT_3306_TCP_PORT:3306}/\${env.KCDB_DATABASE:niordkc}?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" \
   --user-name=\${env.KCDB_USERNAME:niordkc} \
   --password=\${env.KCDB_PASSWORD:niordkc} \
-  --use-ccm=false \
+  --use-ccm=true \
   --min-pool-size=10 \
   --max-pool-size=100 \
   --blocking-timeout-wait-millis=5000 \
