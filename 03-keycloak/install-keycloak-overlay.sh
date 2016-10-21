@@ -15,7 +15,7 @@ pushd $WILDFLY_PATH > /dev/null
 # Since downloads.jboss.org can be APPALLINGLY slow, keep a copy in /tmp
 if [ ! -f "$TEMP_KEYCLOAK_OVERLAY_PATH" ]
 then
-    curl -o $TEMP_KEYCLOAK_OVERLAY_PATH http://downloads.jboss.org/keycloak/$KEYCLOAK_VERSION/$KEYCLOAK_OVERLAY.zip
+    curl -o $TEMP_KEYCLOAK_OVERLAY_PATH https://downloads.jboss.org/keycloak/$KEYCLOAK_VERSION/$KEYCLOAK_OVERLAY.zip
 fi
 cp $TEMP_KEYCLOAK_OVERLAY_PATH $KEYCLOAK_OVERLAY.zip
 unzip -o $KEYCLOAK_OVERLAY.zip
