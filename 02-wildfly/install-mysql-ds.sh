@@ -41,8 +41,6 @@ data-source add \
   --background-validation=true \
   --background-validation-millis=60000
 
-# Reload and stop offline server
-reload --admin-only=false
 stop-embedded-server
 EOF
 

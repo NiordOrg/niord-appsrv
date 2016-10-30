@@ -13,8 +13,6 @@ embed-server --std-out=echo
 /subsystem=batch-jberet/jdbc-job-repository=jdbc:add(data-source=$DS_NAME)
 /subsystem=batch-jberet/:write-attribute(name=default-job-repository,value=jdbc)
 
-# Reload and stop offline server
-reload --admin-only=false
 stop-embedded-server
 EOF
 

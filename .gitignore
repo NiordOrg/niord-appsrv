@@ -1,4 +1,5 @@
 /wildfly-*
+/keycloak-*
 .settings
 .project
 .classpath
