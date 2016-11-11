@@ -32,6 +32,14 @@ Installs a Wildfly server and configures a MySQL data source, a Hibernate Spatia
     ./02-wildfly/install-wildfly.sh
 
 
+## Importing Niord Base Data
+
+Once you have deployed the Niord web application, you can populate the database with a set of base data, including
+areas, charts, categories, domains, etc.
+
+Copy the *niord-dev-basedata.zip* archive to the *$NIORD_HOME/batch-jobs/batch-sets/* folder.
+
+
 ## Keycloak Installation and Configuration
 
 The default development set-up will install Keycloak as a overlay to the Wildfly server running the Niord application.
