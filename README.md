@@ -32,14 +32,6 @@ Installs a Wildfly server and configures a MySQL data source, a Hibernate Spatia
     ./02-wildfly/install-wildfly.sh
 
 
-## Importing Niord Base Data
-
-Once you have deployed the Niord web application, you can populate the database with a set of base data, including
-areas, charts, categories, domains, etc.
-
-Copy the *niord-dev-basedata.zip* archive to the *$NIORD_HOME/batch-jobs/batch-sets/* folder.
-
-
 ## Keycloak Installation and Configuration
 
 The default development set-up will install Keycloak as a overlay to the Wildfly server running the Niord application.
@@ -49,9 +41,22 @@ The default development set-up will install Keycloak as a overlay to the Wildfly
 
 ### Importing a Keycloak Realm
 
-You may want to start out with a pre-configured Keycloak realm for development purposes. Run the following command:
+Once Keycloak has been installed, you can start it up with a Niord bootstrap realm. Run the following command:
 
     ./03-keycloak/import-realm.sh
+
+The imported realm, as defined in niord-bootstrap-realm.json, will create a "Master" Niord domain along with a
+system administrator user (sysadmin/sysadmin) that can be used to configure the Niord system.
+
+Use the sysadmin user to create new domains, possibly by importing a Niord base data set, as described in the next section.
+
+
+## Importing Niord Base Data
+
+Once you have deployed the Niord web application, you can populate the database with a set of base data, including
+areas, charts, categories, domains, etc.
+
+Copy the *niord-dev-basedata.zip* archive to the *$NIORD_HOME/batch-jobs/batch-sets/* folder.
 
 
 ### Running behind a reverse SSL proxy

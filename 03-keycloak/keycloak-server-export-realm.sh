@@ -9,7 +9,7 @@ DIR=`dirname $0`
 source $DIR/keycloak-env.sh
 
 REALM_NAME=niord
-REALM_FILE=$DIR/niord-dev-realm.json
+REALM_FILE=$DIR/niord-bootstrap-realm.json
 
 # Check if a realm file has been specified
 if [ -n "$1" ]
