@@ -15,6 +15,7 @@ batch
 /socket-binding-group=standard-sockets/socket-binding=proxy-https:add(port=443)
 
 /subsystem=transactions:write-attribute(name=node-identifier,value=Niord)
+/subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=max-post-size,value=1073741824)
 
 run-batch
 stop-embedded-server
