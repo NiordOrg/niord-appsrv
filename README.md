@@ -38,6 +38,9 @@ The default development set-up will install Keycloak as a overlay to the Wildfly
 
     ./03-keycloak/install-keycloak-overlay.sh
 
+Add a Keycloak admin user using the command
+
+    ./keycloak-folder/bin/add-user-keycloak.sh -r master -u <<user>> -p <<password>>
 
 ### Importing a Keycloak Realm
 
