@@ -26,6 +26,9 @@ $WILDFLY_CONF_DIR/configure-smtp.sh
 # Install the MySQL driver
 $WILDFLY_CONF_DIR/install-mysql-ds.sh
 
+# Configure messaging support
+$WILDFLY_CONF_DIR/configure-wildfly-jms.sh
+
 # Configure JDBC-backed Batch support
 $WILDFLY_CONF_DIR/configure-wildfly-batch.sh
 
