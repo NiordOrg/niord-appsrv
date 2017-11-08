@@ -34,9 +34,9 @@ Installs a Wildfly server and configures a MySQL data source, a Hibernate Spatia
 
 ## Keycloak Installation and Configuration
 
-The default development set-up will install Keycloak as a overlay to the Wildfly server running the Niord application.
+Installs the Keycloak server and configures a MySQL data source, configures HTTPS, etc.
 
-    ./03-keycloak/install-keycloak-overlay.sh
+    ./03-keycloak/install-keycloak-server.sh
 
 Add a Keycloak admin user using the command
 
@@ -46,7 +46,7 @@ Add a Keycloak admin user using the command
 
 Once Keycloak has been installed, you can start it up with a Niord bootstrap realm. Run the following command:
 
-    ./03-keycloak/import-realm.sh
+    ./03-keycloak/keycloak-server-import-realm.sh
 
 The imported realm, as defined in niord-bootstrap-realm.json, will create a "Master" Niord domain along with a
 system administrator user (sysadmin/sysadmin) that can be used to configure the Niord system.
