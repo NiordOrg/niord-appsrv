@@ -9,7 +9,8 @@ KEYCLOAK_ADAPTER=keycloak-wildfly-adapter-dist-$KEYCLOAK_VERSION
 
 echo "Installing Keycloak Wildfly adapter."
 pushd $WILDFLY_PATH > /dev/null
-curl -o $KEYCLOAK_ADAPTER.zip http://downloads.jboss.org/keycloak/$KEYCLOAK_VERSION/adapters/keycloak-oidc/$KEYCLOAK_ADAPTER.zip
+curl -o $KEYCLOAK_ADAPTER.zip https://downloads.jboss.org/keycloak/$KEYCLOAK_VERSION/adapters/keycloak-oidc/$KEYCLOAK_ADAPTER.zip
+
 unzip -o $KEYCLOAK_ADAPTER.zip
 rm $KEYCLOAK_ADAPTER.zip
 
