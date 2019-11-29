@@ -6,9 +6,9 @@ source $DIR/wildfly-env.sh
 
 HIBERNATE_MODULE=$WILDFLY_PATH/modules/system/layers/base/org/hibernate/main
 
-HIBERNATE_VERSION=5.0.10.Final
+HIBERNATE_VERSION=5.4.9.Final
 HIBERNATE_SPATIAL=hibernate-spatial-$HIBERNATE_VERSION.jar
-GEOLATTE_VERSION=1.0.5
+GEOLATTE_VERSION=1.4.0
 GEOLATTE=geolatte-geom-$GEOLATTE_VERSION.jar
 JTS_VERSION=1.14.0
 JTS=jts-core-$JTS_VERSION.jar
