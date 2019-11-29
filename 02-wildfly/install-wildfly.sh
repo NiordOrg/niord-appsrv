@@ -36,5 +36,5 @@ $WILDFLY_CONF_DIR/configure-wildfly-batch.sh
 $WILDFLY_CONF_DIR/install-hibernate-spatial.sh
 
 # Install the Keycloak adapter
-$WILDFLY_CONF_DIR/install-keycloak-adapter.sh
+#$WILDFLY_CONF_DIR/install-keycloak-adapter.sh
 
