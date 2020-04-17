@@ -10,7 +10,7 @@ MYSQL_DRIVER=mysql-connector-java-$MYSQL_DRIVER_VERSION.jar
 
 echo "Installing MySQL driver."
 pushd $DIR > /dev/null
-curl -o $MYSQL_DRIVER http://central.maven.org/maven2/mysql/mysql-connector-java/$MYSQL_DRIVER_VERSION/$MYSQL_DRIVER
+curl -o $MYSQL_DRIVER https://repo1.maven.org/maven2/mysql/mysql-connector-java/$MYSQL_DRIVER_VERSION/$MYSQL_DRIVER
 $WILDFLY_PATH/bin/jboss-cli.sh <<EOF
 # Start offline server
 embed-server --std-out=echo
