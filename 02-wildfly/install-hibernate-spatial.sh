@@ -61,15 +61,15 @@ EOL
 
 echo "Installing Hibernate Spatial module resources."
 curl -o $HIBERNATE_MODULE/$HIBERNATE_SPATIAL \
-       http://central.maven.org/maven2/org/hibernate/hibernate-spatial/$HIBERNATE_VERSION/$HIBERNATE_SPATIAL
+       https://repo1.maven.org/maven2/org/hibernate/hibernate-spatial/$HIBERNATE_VERSION/$HIBERNATE_SPATIAL
 curl -o $HIBERNATE_MODULE/$GEOLATTE \
-       http://central.maven.org/maven2/org/geolatte/geolatte-geom/$GEOLATTE_VERSION/$GEOLATTE
+       https://repo1.maven.org/maven2/org/geolatte/geolatte-geom/$GEOLATTE_VERSION/$GEOLATTE
 curl -o $HIBERNATE_MODULE/$JTS \
-       http://central.maven.org/maven2/com/vividsolutions/jts-core/$JTS_VERSION/$JTS
+       https://repo1.maven.org/maven2/com/vividsolutions/jts-core/$JTS_VERSION/$JTS
 curl -o $HIBERNATE_MODULE/$JTS_IO \
-       http://central.maven.org/maven2/com/vividsolutions/jts-io/$JTS_IO_VERSION/$JTS_IO
+       https://repo1.maven.org/maven2/com/vividsolutions/jts-io/$JTS_IO_VERSION/$JTS_IO
 curl -o $HIBERNATE_MODULE/$JSON_SIMPLE \
-       http://central.maven.org/maven2/com/googlecode/json-simple/json-simple/$JSON_SIMPLE_VERSION/$JSON_SIMPLE
+       https://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/$JSON_SIMPLE_VERSION/$JSON_SIMPLE
 
 
 
