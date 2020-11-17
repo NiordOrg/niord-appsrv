@@ -25,7 +25,7 @@ MYSQL_DRIVER_VERSION=5.1.39
 MYSQL_DRIVER=mysql-connector-java-$MYSQL_DRIVER_VERSION.jar
 
 echo "Installing MySQL driver."
-curl -o $MYSQL_DRIVER http://central.maven.org/maven2/mysql/mysql-connector-java/$MYSQL_DRIVER_VERSION/$MYSQL_DRIVER
+curl -o $MYSQL_DRIVER https://repo1.maven.org/maven2/mysql/mysql-connector-java/$MYSQL_DRIVER_VERSION/$MYSQL_DRIVER
 
 # We want to configure Keycloak support HTTPS and to use MySQL, not the default H2.
 echo "Configuring Keycloak server."
