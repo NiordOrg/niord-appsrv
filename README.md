@@ -9,7 +9,7 @@ and Keycloak will be deployed as an overlay to the Wildfly server.
 
 * Java 8
 * Maven 3
-* MySQL 5.7.10+ (NB: proper spatial support is a requirement)
+* MySQL 5.7.10+ (NB: proper spatial support is a requirement, 8.X is not supported)
 
 
 ### Windows
