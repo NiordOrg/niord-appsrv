@@ -21,8 +21,7 @@ echo "Installing Niord login theme"
 cp -r $KEYCLOAK_CONF_DIR/theme/niord $KEYCLOAK_PATH/themes/
 
 
-MYSQL_DRIVER_VERSION=8.0.22
-#5.1.39
+MYSQL_DRIVER_VERSION=5.1.49
 MYSQL_DRIVER=mysql-connector-java-$MYSQL_DRIVER_VERSION.jar
 
 echo "Installing MySQL driver."
