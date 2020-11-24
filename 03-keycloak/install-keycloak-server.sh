@@ -39,7 +39,6 @@ module add \
   --name=com.mysql \
   --resources=$MYSQL_DRIVER \
   --dependencies=javax.api,javax.transaction.api
-  --allow-nonexistent-resources
   	
 # Add mysql driver
 /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql,driver-class-name=com.mysql.jdbc.Driver)
