@@ -21,7 +21,8 @@ echo "Installing Niord login theme"
 cp -r $KEYCLOAK_CONF_DIR/theme/niord $KEYCLOAK_PATH/themes/
 
 
-MYSQL_DRIVER_VERSION=5.1.39
+MYSQL_DRIVER_VERSION=8.0.22
+#5.1.39
 MYSQL_DRIVER=mysql-connector-java-$MYSQL_DRIVER_VERSION.jar
 
 echo "Installing MySQL driver."
@@ -38,14 +39,15 @@ module add \
   --name=com.mysql \
   --resources=$MYSQL_DRIVER \
   --dependencies=javax.api,javax.transaction.api
-
+  --allow-nonexistent-resources
+  	
 # Add mysql driver
 /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql,driver-class-name=com.mysql.jdbc.Driver)
 
 # Configure HTTPS
+/socket-binding-group=standard-sockets/socket-binding=proxy-https:add(port=443)
 /subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=proxy-address-forwarding,value=true)
 /subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=redirect-socket,value=proxy-https)
-/socket-binding-group=standard-sockets/socket-binding=proxy-https:add(port=443)
 
 /subsystem=transactions:write-attribute(name=node-identifier,value=NiordKC)
 
