@@ -1,3 +1,8 @@
+# Note
+This repository is no longer maintained. The functionality provided here has been put into individual repositories such as:
+* https://github.com/NiordOrg/niord-keycloak
+* https://github.com/NiordOrg/niord-wildfly
+
 # niord-appsrv
 
 The Niord web application runs in a JBoss Wildfly server and require MySQL and JBoss Keycloak to function.
